@@ -14,6 +14,8 @@ import { DatePickerInput } from "@mantine/dates";
 import { useForm, Controller } from "react-hook-form";
 import { IconChevronDown, IconArrowRight } from "@tabler/icons-react";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+
 // Defines the structure of our form data
 type JobFormData = {
   jobTitle: string;
@@ -68,7 +70,7 @@ export function CreateJobModal({
   // This function now sends the data to our NestJS backend API
   const onSubmit = async (data: JobFormData) => {
     try {
-      const response = await fetch("http://localhost:3001/jobs", {
+      const response = await fetch(`${API_URL}/jobs`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
