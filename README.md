@@ -49,49 +49,54 @@ To run this project on your local machine, follow these steps.
 git clone <your-github-repo-url>
 cd job-management
 
-#### \#\#\# 2. Backend Setup
+### 2. Backend Setup
+Navigate to the backend directory:
 
-1.  Navigate to the backend directory:
-    ```bash
-    cd job-management-backend
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Create a `.env` file in the root of the `job-management-backend` folder.
-4.  Add your local database connection string to the `.env` file (replace with your credentials):
-    ```env
-    DATABASE_URL=postgresql://YOUR_USERNAME:YOUR_PASSWORD@localhost:5432/job_management
-    ```
-5.  Start the backend server:
-    ```bash
-    npm run start:dev
-    ```
-    The backend will be running at `http://localhost:3001`.
+Bash
 
-#### \#\#\# 3. Frontend Setup
+cd job-management-backend
+Install dependencies:
 
-1.  Open a **new terminal** and navigate to the frontend directory:
-    ```bash
-    cd job-management-frontend
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Start the frontend development server:
-    ```bash
-    npm run dev
-    ```
-    The frontend will be running at `http://localhost:3000`. Open this URL in your browser to see the application.
+Bash
 
------
+npm install
+Create a .env file in the root of the job-management-backend folder.
 
-## \#\# Deployment
+Add your local database connection string to the .env file (replace with your credentials):
 
+Code snippet
+
+DATABASE_URL=postgresql://YOUR_USERNAME:YOUR_PASSWORD@localhost:5432/job_management
+Start the backend server:
+
+Bash
+
+npm run start:dev
+The backend will be running at http://localhost:3001.
+
+### 3. Frontend Setup
+Open a new terminal and navigate to the frontend directory:
+
+Bash
+
+cd job-management-frontend
+Install dependencies:
+
+Bash
+
+npm install
+Start the frontend development server:
+
+Bash
+
+npm run dev
+The frontend will be running at http://localhost:3000. Open this URL in your browser to see the application.
+
+## Deployment
 The application is deployed using a modern CI/CD workflow.
 
-  * The **frontend** is deployed on **Vercel**, which automatically builds and deploys any changes pushed to the `main` branch of the GitHub repository.
-  * The **backend and database** are deployed on **Render**, which also automatically deploys changes pushed to the `main` branch.
-```
+The frontend is deployed on Vercel, which automatically builds and deploys any changes pushed to the main branch of the GitHub repository.
+
+The backend and database are deployed on Render, which also automatically deploys changes pushed to the main branch.
+
+
