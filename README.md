@@ -49,6 +49,7 @@ To run this project on your local machine, follow these steps.
 git clone <your-github-repo-url>
 cd job-management
 
+------
 ### 2. Backend Setup
 Navigate to the backend directory:
 
@@ -73,7 +74,7 @@ Bash
 
 npm run start:dev
 The backend will be running at http://localhost:3001.
-
+------
 ### 3. Frontend Setup
 Open a new terminal and navigate to the frontend directory:
 
@@ -91,7 +92,7 @@ Bash
 
 npm run dev
 The frontend will be running at http://localhost:3000. Open this URL in your browser to see the application.
-
+---------------
 ## Deployment
 The application is deployed using a modern CI/CD workflow.
 
