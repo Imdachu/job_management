@@ -1,6 +1,3 @@
-
-
-````markdown:project README:README.md
 # Job Management - Full Stack Application
 
 A complete full-stack application that allows an admin to create, manage, and display job postings. This project features a modern frontend built with Next.js and a robust backend API built with NestJS, connected to a PostgreSQL database.
@@ -51,7 +48,6 @@ To run this project on your local machine, follow these steps.
 ```bash
 git clone <your-github-repo-url>
 cd job-management
-````
 
 #### \#\#\# 2. Backend Setup
 
