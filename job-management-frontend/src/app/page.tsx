@@ -23,12 +23,14 @@ export default function HomePage() {
     salaryRange: [0, 200], // Default range for the slider
   });
 
-
   // Get the backend API URL from the environment variable, fallback to localhost for local dev
   const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
 
   // Fetch jobs from backend
   const fetchJobs = async () => {
+    // THIS IS WHERE YOU ADD THE DEBUGGING STATEMENT
+    console.log("Attempting to fetch jobs from:", API_URL);
+
     try {
       const response = await fetch(`${API_URL}/jobs`);
       if (!response.ok) {
