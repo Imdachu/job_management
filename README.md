@@ -1,18 +1,4 @@
-Of course. Now that your project is fully deployed and functional, creating a professional `README.md` file is the perfect final step. This file is essential for explaining your project to others, including potential employers.
 
-Here is a complete, well-structured `README.md` file for your project.
-
------
-
-### \#\# How to Use This File
-
-1.  In the root directory of your project (the `job-management` folder), create a new file named `README.md`.
-2.  Copy and paste the entire content below into this new file.
-3.  **Important**: Find the line that says `[your-vercel-url]` and replace it with your actual Vercel deployment link.
-
------
-
-I am now adding the `README.md` file to the Canvas.
 
 ````markdown:project README:README.md
 # Job Management - Full Stack Application
@@ -112,8 +98,4 @@ The application is deployed using a modern CI/CD workflow.
 
   * The **frontend** is deployed on **Vercel**, which automatically builds and deploys any changes pushed to the `main` branch of the GitHub repository.
   * The **backend and database** are deployed on **Render**, which also automatically deploys changes pushed to the `main` branch.
-
-Environment variables for the live database connection (`DATABASE_URL`) and the live API URL (`NEXT_PUBLIC_API_URL`) are configured directly on the Render and Vercel platforms, respectively.
-
-```
 ```
