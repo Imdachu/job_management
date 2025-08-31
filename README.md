@@ -2,7 +2,7 @@
 
 A complete full-stack application that allows an admin to create, manage, and display job postings. This project features a modern frontend built with Next.js and a robust backend API built with NestJS, connected to a PostgreSQL database.
 
-**Live Frontend URL**: [https://your-vercel-url](https://your-vercel-url) 
+**Live Frontend URL**: [https://job-management-uqc7.vercel.app/) 
 
 ---
 ## ## Key Features
