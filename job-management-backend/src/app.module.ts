@@ -1,27 +1,31 @@
-
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { JobsModule } from './jobs/jobs.module'; // <-- The only import we need for jobs
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { JobController } from './job.controller';
-import { JobService } from './job.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Job } from './job.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5433,
-      username: 'workflow_user', // <-- Enter your PostgreSQL username
-      password: 'postgres123', // <-- Enter your PostgreSQL password
-      database: 'job-management',     // <-- Enter your PostgreSQL database name
-      entities: [Job],
-      synchronize: true, // Set to false in production
+    ConfigModule.forRoot({ isGlobal: true }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        const isSSL = configService.get<string>('DATABASE_SSL') === 'true';
+        return {
+          type: 'postgres',
+          url: configService.get<string>('DATABASE_URL'),
+          ssl: isSSL ? { rejectUnauthorized: false } : false,
+          autoLoadEntities: true,
+          synchronize: true,
+        };
+      },
     }),
-    TypeOrmModule.forFeature([Job]),
+    // We now import our entire Jobs feature with this one line
+    JobsModule,
   ],
-  controllers: [AppController, JobController],
-  providers: [AppService, JobService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
